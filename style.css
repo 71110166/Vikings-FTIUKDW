@@ -1,0 +1,118 @@
+body {
+font-family: arial,helvetica,sans-serif;
+}
+
+#container {
+margin: 0 auto;
+width: 100%;
+
+}
+
+#header {
+/*background-color: #abacab;*/
+background-image:url('images/bigtoe.jpg');
+background-size: 100% 100%;
+background-repeat:no-repeat;
+padding: 10px;
+border-radius: 10px;
+text-align: center;
+color: white;
+}
+
+#login { 
+	float: right;
+}
+
+#menu {
+float: left;
+width: 100%;
+background-color: #0c0c0c;
+margin: 2px 0 2px 0;
+border-radius: 10px;
+}
+
+#menu ul li {
+list-style-type: none;
+display: inline;
+
+}
+
+#menu li a {
+display: block;
+text-decoration: none;
+border-right: 2px solid #FFFFFF;
+padding: 3px 10px;
+float: left;
+color: #FFFFFF;
+}
+
+#menu li a:hover {
+background-color: #CCCCCC;
+}
+
+#mainContainer {
+display:block;
+width: 100%;
+}
+
+#content {
+clear: left;
+float: left;
+width: 69.8%;
+padding: 20px 0;
+margin: 2px 0 2px 0;
+display: inline;
+background-color: #CCCCCC;
+border-radius: 10px;
+}
+.produklaris {
+	
+	text-align: center;
+	font-size: 14pt;
+	font-style:oblique;
+}
+#produkbaru {
+	display:block;
+	text-align: center;
+	font-size: 14pt;
+	font-style:oblique;
+}
+
+.imgproduk {
+float: left;
+width: 150px;
+border: 1px dashed blue;
+margin: 10px 5px 0 15px;
+border-radius: 5px; 
+}
+
+#sidebar {
+float: right;
+width: 30%;
+height: 517px;
+padding: 20px 0;
+margin: 2px 0 0 0;
+background-color: #CCCCCC;
+text-align: center;
+font-size: 14pt;
+font-style:oblique;
+border-radius: 10px;
+}
+
+#subcontainer {
+height: 100%;
+
+}
+#footer {
+clear: left;
+background-color: #CCCCCC;
+text-align: center;
+padding: 20px;
+height: 1%;
+font-size: 14pt;
+font-style:oblique;
+border-radius: 10px;
+}
+.clear {
+	clear:both;
+}
