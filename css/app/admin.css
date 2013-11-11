@@ -1,0 +1,83 @@
+/**
+ *  @file: admin.css
+ *  @desc: Stylehseet for Administrator pages
+ *
+ *  (c). 2013
+ **/
+
+
+.box-debug {
+    border: solid 1px #ccc;
+}
+
+.boxright {
+    /*border: solid 1px #ccc;*/
+    margin-left: 20px;
+    /*padding: 20px;*/
+}
+
+.boxleft {
+    border: solid 1px #ccc;
+    padding: 10px;
+}
+
+.content {
+    margin-top: 50px;
+}
+
+ul.nav li a span {
+    margin-right: 7px;
+}
+.boxtask {
+    margin-top: 25px;
+    /*border: solid 1px #ccc;*/
+    /*padding: 10px;*/
+}
+
+.fbsubmit button {
+    margin-right: 7px;
+}
+
+.boxCari {
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.boxproduklist {
+    /*border: solid 1px #ccc;*/
+    margin-top: 25px;
+    padding: 10px;
+}
+
+/* style for: pProduk */
+.boxalert_produk-add {
+    width: 700px;
+    text-align: center;
+    display: none;
+}
+
+/* style for: pKategori */
+.boxalert_kategori-add {
+    width: 700px;
+    text-align: center;
+    display: none;
+}
+
+.boxCari_kategori {
+    width: 439px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.boxCari_kategori input#txtCari {
+    width: 400px;
+}
+
+.btnCmd_kategori-table {
+    width: 150px;
+}
+
+.btnCmd_kategori-table button {
+    width: 65px;
+}
