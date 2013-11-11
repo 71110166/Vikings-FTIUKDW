@@ -1,0 +1,165 @@
+body {
+font-family: arial,helvetica,sans-serif;
+width: 100%;
+height: 100%;
+margin: 0;
+padding: 0;
+
+}
+
+#container {
+margin: 0 auto;
+width: 100%;
+
+}
+
+#header {
+/*background-color: #abacab;*/
+background-image:url('../../images/assets/bigtoe.jpg');
+background-size: 100% 100%;
+background-repeat:no-repeat;
+padding: 10px;
+border-radius: 10px;
+text-align: center;
+color: white;
+}
+
+#login {
+	float: right;
+}
+
+#menu {
+float: left;
+width: 100%;
+background-color: #0c0c0c;
+margin: 2px 0 2px 0;
+border-radius: 10px;
+
+}
+#menu ul li {
+list-style-type: none;
+display: inline;
+color: #FFFFFF;
+padding: 0px 10px;
+}
+
+#menu ul li a {
+text-decoration: none;
+color: #FFFFFF;
+}
+
+#menu ul li a:hover {
+color:red;
+text-decoration: blink;
+}
+
+#mainContainer {
+width: 100%;
+height: 100%;
+}
+#subcontainer {
+width: 100%;
+height: 80%;
+background: #FFF;
+border-radius: 10px;
+background-color:#ededed;
+border: 1px solid #CCC;
+}
+
+#content {
+clear: left;
+float: left;
+width: 67.6%;
+padding: 20px 0 20px 30px;
+margin: 0;
+display: inline;
+background-color: #ededed;
+border-radius: 10px 0 0 10px;
+/*border-right: 1px solid #CCC;*/
+}
+.produklaris {
+
+	text-align: center;
+	font-size: 14pt;
+	font-style:oblique;
+}
+#produkbaru {
+	display:block;
+	text-align: center;
+	font-size: 14pt;
+	font-style:oblique;
+}
+.produklogo {
+
+	font-size: 14pt;
+	font-style:oblique;
+}
+#sepatu {
+	font-size: 14pt;
+	font-style:oblique;
+}
+
+.imgproduk  {
+float: left;
+margin: 10px 5px 0 45px;
+border-radius: 5px;
+text-align: center;
+}
+.imgproduk img{
+width: 150px;
+height: 150px;
+}
+
+#sidebar {
+float:right;
+width: 30%;
+height: 100%;
+padding: 20px 0;
+margin: 0;
+text-align: center;
+font-size: 14pt;
+font-style:oblique;
+}
+
+
+#footer {
+clear: left;
+background-color: #CCCCCC;
+text-align: center;
+padding: 20px;
+height: 1%;
+font-size: 14pt;
+font-style:oblique;
+border-radius: 10px;
+margin: 2px 0 0 0;
+}
+div.imgproduk a {
+	text-decoration:none;color:black;
+}
+div.imgproduk a:hover {
+	text-decoration:none;color:red;
+}
+
+/* style untuk image di popup window produk */
+#popup img.produkImg {
+    width: 250px;
+    height: 250px;
+    border:5px solid #bbb;
+    border-radius:5px;
+}
+
+.left {
+	float:left;
+}
+.right {
+	width: 200px;
+	float:right;
+	padding-left:15px;
+}
+
+#submitCart input[type=submit] {
+    padding:10px;
+}
+.clear {
+	clear:both;
+}
