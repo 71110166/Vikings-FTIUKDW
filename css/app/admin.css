@@ -81,3 +81,21 @@ ul.nav li a span {
 .btnCmd_kategori-table button {
     width: 65px;
 }
+
+
+/* styles for produk */
+#modal_produk-edit .modal-dialog {
+    width: 690px;
+}
+
+.btnCmd_produk-table {
+    width: 150px;
+}
+
+.btnCmd_produk-table button {
+    width: 65px;
+}
+
+.tbldata-hidden {
+    display: none;
+}

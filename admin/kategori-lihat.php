@@ -114,6 +114,7 @@
             </div>
         </div>
 
+        <!-- modal kategori-edit -->
         <div class="modal fade" id="modal_kategori-edit">
             <div class="modal-dialog">
                 <div class="modal-content">

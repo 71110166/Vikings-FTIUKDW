@@ -11,7 +11,7 @@
  	/* functions */
 
  	// escape html tags from string
- 	htmlEscape: function(str = '') {
+ 	htmlEscape: function(str) {
  		return $('<div/>').text(str).html();
  	}
 

@@ -21,22 +21,7 @@
 		<div id="header">
 			<h1>Football And Futsall Shop</h1>
 
-			<div id="login">
-				<?php 
-					if (isset($_SESSION['logged'])):
-			 	?>
-			 	<p>Welcome, 
-			 		<a href="admin/" style="color:#ccc;font-weight:bold;text-decoration:none"><?php echo $_SESSION['logged_cred']; ?></a>
-			 		<a href="admin/script/logout_sc.php" style="border:solid 1px #ccc;padding:5px;color:#ccc;background-color:#333">Logout</a>
-			 	</p>
-			 	<?php else: ?>
-				<form action="admin/index.php" method="post">
-					<strong> Username</strong> <input type="text" size="20" name="itxtUsername">
-					<strong> Password </strong>  <input type="password" size="20" name="itxtPassword">
-					<input type="submit" name="submitted" value="Login">
-				</form>
-				<?php endif; ?>
-			</div>
+
 			<div class="clear"></div>
 		</div> <!-- end header -->
 
@@ -47,38 +32,49 @@
 				<li><a href="registrasi.php">Registrasi</a></li><li>|</li>
 				<li><a href="help.php">Bantuan</a></li>
 
+				<ul style="float:right">
+					<li>
+						<?php
+							$item = 0;
+							if (isset($_SESSION['cart'])) {
+								$item = count($_SESSION['cart']);
+								if (!$item)	$item = 0;
+							}
+						 ?>
+						<a href="keranjang.php">(<?php echo $item ?>) Keranjang</a>
+					</li>
+					<li>
+						<div id="login" style="padding-right:10px;">
+				<?php
+					if (isset($_SESSION['logged'])):
+			 	?>
+			 	<p style="margin-top:0;">Selamat Datang,
+			 		<?php if (fnLoginCheck() == 'admin'): ?>
+			 		<a href="admin/" style="color:#ccc;font-weight:bold;text-decoration:none"><?php echo $_SESSION['logged_user']; ?></a>
+			 		<?php else: ?>
+			 		<a href="index.php" style="color:#ccc;font-weight:bold;text-decoration:none"><?php echo $_SESSION['logged_user'] ?></a>
+			 		<?php endif; ?>
+			 		<a href="logout.php" style="border:solid 1px #ccc;padding:5px;color:#ccc;background-color:#555">Keluar</a>
+			 	</p>
+			 	<?php else: ?>
+				<form action="login.php" method="post" style="margin-top:-2px;">
+					Username <input type="text" size="20" name="itxtUsername">
+					Password  <input type="password" size="20" name="itxtPassword">
+					<input type="submit" name="submitted" value="Masuk">
+				</form>
+				<?php endif; ?>
+			</div>
+					</li>
+				</ul>
 			</ul>
 		</div> <!-- end menu -->
 		<div class="clear"></div>
 		<div id="mainContainer">
 		<div id="subcontainer">
 			<div id="content">
-				<!-- <div class="produklaris">
-					<h2>Produk Terlaris</h2>
-					<div class="imgproduk">
-					<img src="images/adidas.png" width="100" height="100" title="Adidas" alt="Adidas"/>
-					<p>Adidas predator</p>
-					</div>
-					<div class="imgproduk">
-					<img src="images/nike.png" width="100" height="100" title="Nike" alt="Nike"/>
-					<p>Nike T70</p>
-					</div>
-					<div class ="imgproduk">
-					<img src="images/umbro.png" width="100" height="100" title="Umbro" alt="Umbro"/>
-					<p>Umbro</p>
-					</div>
-					<div class="imgproduk">
-					<img src="images/puma.png" width="100" height="100" title="Puma" alt="Puma"/>
-					<p>Puma</p>
-					</div>
-					<div class="imgproduk">
-					<img src="images/specs.png" width="100" height="100" title="Specs" alt="Specs"/>
-					<p>Specs</p>
-					</div>
-				</div> -->
 				<div class="clear"></div>
 				<div id ="produkbaru">
-					<h2>Produk Terbaru</h2>
+					<h2 style="text-align:left">Daftar Produk</h2>
 
 					<?php
 						# ambil data produk di db
@@ -95,7 +91,8 @@
 
 					<div class="imgproduk">
 						<img src="images/uploads/<?php echo $row['gambar']; ?>" class="img-thumbnail" alt="<?php echo fnEscape($rowp['nama']) ?>">
-						<p><?php echo fnEscape($row['kat_nama']) . ' ' . fnEscape($row['nama']) ?></p>
+						<p style="font-style:normal;font-size: 16px;"><?php echo fnEscape($row['kat_nama']) . ' ' . fnEscape($row['nama']) . '<br>Rp. ' . fnEscape($row['harga']) ?></p>
+						<p style="visibility:hidden"><?php echo fnEscape($row['id']) ?></p>
 					</div>
 
 					<?php
@@ -107,26 +104,6 @@
 						fnCloseDB($dbc);
 					?>
 
-					<!-- <div class="imgproduk">
-					<img src="images/adidas.png" width="100" height="100" title="Adidas" alt="Adidas"/>
-					<p>Adidas predator</p>
-					</div>
-					<div class="imgproduk">
-					<img src="images/nike.png" width="100" height="100" title="Nike" alt="Nike"/>
-					<p>Nike T70</p>
-					</div>
-					<div class ="imgproduk">
-					<img src="images/umbro.png" width="100" height="100" title="Umbro" alt="Umbro"/>
-					<p>Umbro</p>
-					</div>
-					<div class="imgproduk">
-					<img src="images/puma.png" width="100" height="100" title="Puma" alt="Puma"/>
-					<p>Puma</p>
-					</div>
-					<div class="imgproduk">
-					<img src="images/specs.png" width="100" height="100" title="Specs" alt="Specs"/>
-					<p>Specs</p>
-					</div> -->
 				</div>
 			</div> <!-- end content -->
 			<div id="sidebar">
@@ -160,24 +137,23 @@
 			    <p class="nama-produk"></p>
 
                <h4>Size : </h4>
-			    <form id="submitCart" action="#">
+			    <form id="submitCart" action="addtocart.php" method="post">
                     <select name="size" id="">
-                        <option value="1">38</option>
-                        <option value="2">39</option>
-                        <option value="3">40</option>
-                        <option value="3">41</option>
-                        <option value="3">42</option>
+                        <option value="38">38</option>
+                        <option value="39">39</option>
+                        <option value="40">40</option>
+                        <option value="41">41</option>
+                        <option value="42">42</option>
                     </select>
-                </form>
 
-                <h4>Kuantitas : </h4>
-                <form id="submitCart" action="#">
+                <!-- <h4>Kuantitas : </h4>
                     <select name="kuantitas" id="">
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
-                    </select>
-                    <p><input type="submit" value="Add to Cart"></p>
+                    </select> -->
+                    <input type="hidden" name="id-produk" id="id-produk">
+                    <p><input type="submit" value="Beli Produk" style="float:right"></p>
                 </form>
             </div>
 			<span class="button b-close"><span>X</span></span>

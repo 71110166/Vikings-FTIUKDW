@@ -163,3 +163,13 @@ div.imgproduk a:hover {
 .clear {
 	clear:both;
 }
+
+
+#tabel-keranjang {
+	width: 830px;
+	text-align: center;
+}
+
+#tabel-keranjang td {
+	border: 1px solid #ccc;
+}
